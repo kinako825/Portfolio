@@ -1,5 +1,7 @@
 
-import { useState } from 'react';
+import React, { useState } from 'react';
+import Buttun from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 
 interface FormProps {
     addTodo: (text: string) => void;
@@ -9,7 +11,7 @@ interface FormProps {
 const Form: React.FC<FormProps> = ({ addTodo }) => {
     const [text, setText] = useState<string>('');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (text.trim() === '') return alert('文字を入力してください');
         addTodo(text);
@@ -17,13 +19,13 @@ const Form: React.FC<FormProps> = ({ addTodo }) => {
     };
     return (
         <form onSubmit={handleSubmit}>
-            <input
+            <TextField
                 type="text"
                 value={text}
-                onChange={(e) => setText(e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setText(e.target.value)}
                 placeholder='タスクを入力...'
             />
-            <button disabled={text.trim() === ''}>送信</button>
+            <Buttun variant= "contained" color="primary" disabled={text.trim() === ''}>送信</Buttun>
         </form>
     );
 };

@@ -10,7 +10,7 @@ export const fetchTodos = async () => {
         return await res.json();
     } catch (error) {
         console.error('Error fetching todos:', error);
-        throw error; // 呼び出し元にエラーを伝える
+        throw error; 
     }
 };
 
@@ -29,7 +29,7 @@ export const addTodo = async (title: string) => {
         return await res.json();
     } catch (error) {
         console.error('Error adding todo:', error);
-        throw error; // 呼び出し元にエラーを伝える
+        throw error; 
     }
 };
 
