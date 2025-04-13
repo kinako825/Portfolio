@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
-import Buttun from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
+import { Button, TextField } from '@mui/material';
+import styles from './styles/Form.module.css';
 
 interface FormProps {
     addTodo: (text: string) => void;
@@ -24,8 +24,19 @@ const Form: React.FC<FormProps> = ({ addTodo }) => {
                 value={text}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setText(e.target.value)}
                 placeholder='タスクを入力...'
+                variant="outlined"
+                size="medium"
+                className={styles.input}
             />
-            <Buttun variant= "contained" color="primary" disabled={text.trim() === ''}>送信</Buttun>
+            <Button
+                variant="contained"
+                color="primary"
+                size="medium"
+                disabled={text.trim() === ''}
+                className={styles.button}
+            >
+                    送信
+            </Button>
         </form>
     );
 };

@@ -9,7 +9,6 @@ interface ItemProps {
 }
 
 const Item: React.FC<ItemProps> = ({ id, title, deleteTodo }) => {
-    // チェックボックスのチェック状態
     const [isDone, setIsDone] = useState(false);
     return (
         <li>
