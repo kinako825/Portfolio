@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-// import { Todo } from './App';
-import './styles/Item.module.css';
 
 interface ItemProps {
     id: number;

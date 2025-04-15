@@ -29,13 +29,14 @@ const Form: React.FC<FormProps> = ({ addTodo }) => {
                 className={styles.input}
             />
             <Button
+                type="submit"
                 variant="contained"
                 color="primary"
                 size="medium"
                 disabled={text.trim() === ''}
                 className={styles.button}
             >
-                    送信
+                送信
             </Button>
         </form>
     );

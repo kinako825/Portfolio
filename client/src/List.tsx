@@ -7,7 +7,6 @@ interface ListProps {
 }
 
 const List: React.FC<ListProps> = ({ todos, deleteTodo }) => {
-    // 配列をもとに新しい配列を生成: mapメソッド
     console.log(todos);
     return (
         <ul>
