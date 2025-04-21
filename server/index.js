@@ -1,15 +1,15 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const { Pool } = require('pg');
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 const pool = new Pool({
-    user: 'todo_user',
-    host: 'localhost',
-    database: 'tasks',
-    password: 'yuki1221',
-    port: 5432,
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false,
+    },
 });
 
 
@@ -42,7 +42,7 @@ app.post('/todos', async (req, res) => {
         );
         console.log('Query result:', result);
         if (result.rows && result.rows.length > 0) {
-            res.json(result.rows[0]); // 新しく追加されたtodoを返す
+            res.json(result.rows[0]);
         } else {
             res.status(400).json({ error: 'Failed to add todo' });
         }
