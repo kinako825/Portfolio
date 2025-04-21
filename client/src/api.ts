@@ -15,7 +15,7 @@ export const fetchTodos = async () => {
 
 export const addTodo = async (title: string) => {
     try {
-        const res = await fetch(API_URL, {
+        const res = await fetch(`${API_URL}/todos`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ export const addTodo = async (title: string) => {
 
 export const deleteTodo = async (id: number) => {
     try {
-        const res = await fetch(`${API_URL}/${id}`, {
+        const res = await fetch(`${API_URL}/todos/${id}`, {
             method: 'DELETE',
         });
         if (!res.ok) {
