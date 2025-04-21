@@ -2,7 +2,7 @@ const API_URL = process.env.REACT_APP_API_URL as string;
 
 export const fetchTodos = async () => {
     try {
-        const res = await fetch(API_URL);
+        const res = await fetch(`${API_URL}/todos`);
         if (!res.ok) {
             throw new Error('Failed to fetch todos');
         }
