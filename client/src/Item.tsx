@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './styles/Item.module.css';
+import Button from '@mui/material/Button';
 
 
 
@@ -17,11 +18,25 @@ const Item: React.FC<ItemProps> = ({ id, title, deleteTodo }) => {
                 type='checkbox'
                 checked={isDone}
                 onChange={() => setIsDone(!isDone)}
+                className={styles.checkbox}
             />
             <span style={{ textDecoration: isDone ? 'line-through' : 'none' }}>
                 {title}
             </span>
-            <button onClick={() => deleteTodo(id)}>削除</button>
+            <Button
+                variant="contained"
+                className={styles.button}
+                onClick={() => deleteTodo(id)}
+                sx={{
+                    backgroundColor: '#96add6',
+                    '&:hover': {
+                        backgroundColor: '#c64a47',
+                    },
+                    width: '60px',
+                    marginLeft: '10px',
+                }}
+            >
+                削除</Button>
         </li>
     );
 };

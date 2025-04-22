@@ -27,7 +27,10 @@ const Form: React.FC<FormProps> = ({ addTodo }) => {
                 variant="outlined"
                 size="medium"
                 className={styles.input}
-                sx={{ marginRight: '10px' }}
+                sx={{
+                    marginRight: '10px',
+                    backgroundColor: '#ffffff',
+                }}
             />
             <Button
                 type="submit"
@@ -36,6 +39,9 @@ const Form: React.FC<FormProps> = ({ addTodo }) => {
                 size="medium"
                 disabled={text.trim() === ''}
                 className={styles.button}
+                sx={{
+                    backgroundColor: '#67be95',
+                }}
             >
                 送信
             </Button>
