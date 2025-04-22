@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import styles from './styles/Item.module.css';
+
+
 
 interface ItemProps {
     id: number;
@@ -9,7 +12,7 @@ interface ItemProps {
 const Item: React.FC<ItemProps> = ({ id, title, deleteTodo }) => {
     const [isDone, setIsDone] = useState(false);
     return (
-        <li>
+        <li className={styles.li}>
             <input
                 type='checkbox'
                 checked={isDone}

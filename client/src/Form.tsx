@@ -18,7 +18,7 @@ const Form: React.FC<FormProps> = ({ addTodo }) => {
         setText('');
     };
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className={styles.form}>
             <TextField
                 type="text"
                 value={text}
@@ -27,6 +27,7 @@ const Form: React.FC<FormProps> = ({ addTodo }) => {
                 variant="outlined"
                 size="medium"
                 className={styles.input}
+                sx={{ marginRight: '10px' }}
             />
             <Button
                 type="submit"
