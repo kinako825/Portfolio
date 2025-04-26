@@ -1,17 +1,23 @@
-require("dotenv").config();
+const dotenv = require('dotenv');
+const path = require('path');
 const express = require("express");
 const cors = require("cors");
 const { Pool } = require('pg');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const pool = new Pool({
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-        rejectUnauthorized: false,
-    },
-});
+const envPath = process.env.NODE_ENV === 'development' ? '.env.development' : '.env';
+dotenv.config({ path: path.resolve(__dirname, envPath) });
 
+const poolConfig = {
+    connectionString: process.env.DATABASE_URL,
+};
+
+if (process.env.NODE_ENV === 'production') {
+    poolConfig.ssl = { rejectUnauthorized: false };
+}
+
+const pool = new Pool(poolConfig);
 
 app.use(express.json());
 app.use(cors());
