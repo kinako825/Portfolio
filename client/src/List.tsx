@@ -1,5 +1,6 @@
 import Item from './Item';
 import { Todo } from './App';
+import styles from './styles/List.module.css';
 
 interface ListProps {
     todos: Todo[];
@@ -9,7 +10,7 @@ interface ListProps {
 const List: React.FC<ListProps> = ({ todos, deleteTodo }) => {
     console.log(todos);
     return (
-        <ul>
+        <ul className={styles.list}>
             {todos.map((todo) => {
                 return (
                     <Item

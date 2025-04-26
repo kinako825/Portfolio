@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './styles/Item.module.css';
 import Button from '@mui/material/Button';
+import Paper from '@mui/material/Paper';
 
 
 
@@ -12,32 +13,30 @@ interface ItemProps {
 
 const Item: React.FC<ItemProps> = ({ id, title, deleteTodo }) => {
     const [isDone, setIsDone] = useState(false);
+
     return (
-        <li className={styles.li}>
-            <input
-                type='checkbox'
-                checked={isDone}
-                onChange={() => setIsDone(!isDone)}
-                className={styles.checkbox}
-            />
-            <span style={{ textDecoration: isDone ? 'line-through' : 'none' }}>
-                {title}
-            </span>
+        <Paper elevation={3} className={styles.paper}>
+            <div className={styles.checkboxWrapper}>
+                <input
+                    type="checkbox"
+                    checked={isDone}
+                    onChange={() => setIsDone(!isDone)}
+                    className={styles.checkbox}
+                />
+            </div>
+            <div className={styles.titleWrapper}>
+                <span className={isDone ? styles.titleDone : styles.title}>
+                    {title}
+                </span>
+            </div>
             <Button
                 variant="contained"
                 className={styles.button}
                 onClick={() => deleteTodo(id)}
-                sx={{
-                    backgroundColor: '#96add6',
-                    '&:hover': {
-                        backgroundColor: '#c64a47',
-                    },
-                    width: '60px',
-                    marginLeft: '10px',
-                }}
             >
                 削除</Button>
-        </li>
+
+        </Paper >
     );
 };
 
