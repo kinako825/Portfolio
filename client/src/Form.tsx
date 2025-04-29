@@ -23,13 +23,14 @@ const Form: React.FC<FormProps> = ({ addTodo }) => {
                 type="text"
                 value={text}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setText(e.target.value)}
-                placeholder='タスクを入力...'
+                placeholder='タスクを入力してね'
                 variant="outlined"
                 size="medium"
                 className={styles.input}
                 sx={{
                     marginRight: '10px',
                     backgroundColor: '#ffffff',
+                    borderRadius: '10px',
                 }}
             />
             <Button
@@ -41,6 +42,7 @@ const Form: React.FC<FormProps> = ({ addTodo }) => {
                 className={styles.button}
                 sx={{
                     backgroundColor: '#67be95',
+                    borderRadius: '10px',
                 }}
             >
                 送信

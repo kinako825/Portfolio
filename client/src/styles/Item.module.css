@@ -1,11 +1,10 @@
 .paper {
     display: flex;
     align-items: center;
-    width: 350px;
-    border-radius: 12px;
-    border: 1px solid #ddd;
+    width: 370px;
+    border: 1px solid #eaeaea;
     padding: 12px;
-    margin: 12px 0;
+    margin: 19px 0;
     gap: 8px;
 }
 
@@ -30,14 +29,4 @@
 .titleDone {
     flex-grow: 1;
     text-decoration: line-through;
-}
-
-.button {
-    width: 60px;
-    margin-left: 10px;
-    background-color: #96add6;
-}
-
-.button:hover {
-    background-color: #c64a47;
 }

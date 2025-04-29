@@ -15,7 +15,13 @@ const Item: React.FC<ItemProps> = ({ id, title, deleteTodo }) => {
     const [isDone, setIsDone] = useState(false);
 
     return (
-        <Paper elevation={3} className={styles.paper}>
+        <Paper
+            elevation={2}
+            className={styles.paper}
+            sx={{
+                borderRadius: '20px',
+            }}
+        >
             <div className={styles.checkboxWrapper}>
                 <input
                     type="checkbox"
@@ -33,6 +39,14 @@ const Item: React.FC<ItemProps> = ({ id, title, deleteTodo }) => {
                 variant="contained"
                 className={styles.button}
                 onClick={() => deleteTodo(id)}
+                sx={{
+                    width: '60px',
+                    marginLeft: '10px',
+                    backgroundColor: '#a6badc',
+                    '&:hover': {
+                        backgroundColor: '#c64a47',
+                    },
+                }}
             >
                 削除</Button>
 

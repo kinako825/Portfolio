@@ -1,12 +1,16 @@
 .container {
-    font-family: 'Helvetica', 'Arial', 'Yu Gothic', 'Meiryo', sans-serif;
+    font-family: 'Zen Maru Gothic', 'Yu Gothic', sans-serif;
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    /* text-align: center; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     height: 100vh;
+}
+
+.container h1 {
+    color: #525252e3;
+    font-family: 'Nunito', 'Yu Gothic', sans-serif;
 }
