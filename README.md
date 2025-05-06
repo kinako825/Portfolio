@@ -14,9 +14,9 @@
 - タスクの削除
 - タスクの完了/未完了の切り替え
 
-### 使用技術
-- フロントエンド: TypeScript
-- バックエンド: Node.js
+### 技術スタック
+- フロントエンド: TypeScript + React + MUI 
+- バックエンド: Node.js + Express（タスク管理用のAPIを構築）
 - データベース: PostgreSQL
 
 ### ディレクトリ構成
